@@ -1,4 +1,5 @@
-mongo-connect
-=============
+# Mongo Connect
 
-Mongo connect is a utility library that connects to a Mongo DB server, selects a database and fires callback.
+A small library that exposes a function to easily connect to mongo db server, selects a db and fire callback.
+
+*Disclaimer:* I've created such library to be used in my projects
