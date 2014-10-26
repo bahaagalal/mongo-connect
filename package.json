@@ -1,0 +1,28 @@
+{
+  "name": "mongo-connect",
+  "version": "0.1.0",
+  "author": "BahaaGalal <bahaa.g.ali@gmail.com>",
+  "description": "mongo connect utility, connects to mongo db server, selects a database and fire callbacks",
+  "main": "./lib/mongo.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bahaagalal/mongo-connect.git"
+  },
+  "keywords": [
+    "mongo",
+    "mongodb"
+  ],
+  "engine": {
+    "node": ">=0.10"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha test/*.js"
+  },
+  "devDependencies": {
+    "mocha": "~2.0.1",
+    "chai": "~1.9.2"
+  },
+  "dependencies": {
+    "mongodb": "~1.4.19"
+  }
+}
