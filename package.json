@@ -1,6 +1,6 @@
 {
   "name": "mongodb-connect",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "author": "BahaaGalal <bahaa.g.ali@gmail.com>",
   "description": "mongo connect utility, connects to mongo db server, selects a database and fire callbacks",
   "main": "./lib/mongo.js",
