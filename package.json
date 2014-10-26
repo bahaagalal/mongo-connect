@@ -1,5 +1,5 @@
 {
-  "name": "mongo-connect",
+  "name": "mongodb-connect",
   "version": "0.1.0",
   "author": "BahaaGalal <bahaa.g.ali@gmail.com>",
   "description": "mongo connect utility, connects to mongo db server, selects a database and fire callbacks",
