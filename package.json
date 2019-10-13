@@ -1,6 +1,6 @@
 {
   "name": "mongodb-connect",
-  "version": "0.1.3",
+  "version": "1.0.0",
   "author": "BahaaGalal <bahaa.g.ali@gmail.com>",
   "description": "mongo connect utility, connects to mongo db server, selects a database and fire callbacks",
   "main": "./lib/mongo.js",
@@ -13,16 +13,22 @@
     "mongodb"
   ],
   "engine": {
-    "node": ">=0.10"
+    "node": ">=10"
   },
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha test/*.js"
+    "test": "./node_modules/mocha/bin/mocha test/*.js",
+    "lint": "eslint ./lib/ ./test/",
+    "docker": "docker-compose up -d --build && docker exec -it ${PWD##*/} bash"
   },
   "devDependencies": {
+    "eslint": "^6.5.1",
+    "eslint-config-crowdanalyzer": "^1.4.1",
     "mocha": "~2.0.1",
-    "chai": "~1.9.2"
+    "chai": "~1.9.2",
+    "mongodb": "^2.2.33"
   },
-  "dependencies": {
-    "mongodb": "*"
+  "dependencies": {},
+  "peerDependencies": {
+    "mongodb": "^2.2.33"
   }
 }

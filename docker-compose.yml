@@ -1,0 +1,18 @@
+version: '2.4'
+services:
+  node:
+    tty: true
+    stdin_open: true
+    container_name: mongo-connect
+    build:
+      context: .
+      args:
+        - NPM_TOKEN
+    depends_on:
+      - mongo
+    volumes:
+      - '.:/home/node/app:rw'
+    user: 'node:node'
+
+  mongo:
+    image: mongo:3.4

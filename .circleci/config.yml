@@ -1,0 +1,50 @@
+version: 2
+references:
+  workdir: &workdir /var/code
+
+  attach_workdir: &attach_workdir
+    attach_workspace:
+      at: *workdir
+
+  images: &images
+    docker:
+      - image: 'node:10.14.0'
+      - image: 'mongo:3.6'
+        name: mongo
+    working_directory: *workdir
+
+jobs:
+  checks:
+    <<: *images
+    steps:
+      - checkout
+      - run:
+          name: Installing dependencies
+          command: npm install
+      - run:
+          name: Running test
+          command: npm run test
+      - persist_to_workspace:
+          root: *workdir
+          paths:
+            - ./*
+
+  publish:
+    <<: *images
+    steps:
+      - *attach_workdir
+      - run: npm publish
+
+workflows:
+  version: 2
+  test_and_publish:
+    jobs:
+      - checks:
+          context: npm
+      - publish:
+          context: npm
+          requires:
+            - checks
+          filters:
+            branches:
+              only: master

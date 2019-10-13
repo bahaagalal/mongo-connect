@@ -118,7 +118,7 @@ describe('mongo', function(){
 
 		it('should return a mongo client object if database config is correct', function(done){
 			mongo.connect({
-				host: '127.0.0.1',
+				host: 'mongo',
 				port: 27017,
 				db: 'test'
 			}, function(err, client){
